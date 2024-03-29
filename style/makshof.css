@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap");
+
+body {
+  font-family: "Figtree", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* tampilan mobile */
+.container {
+  padding: 0px 8px;
+  max-width: 1536px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a {
+  text-decoration: none;
+}
+.Menu .navbar nav {
+  width: 12%;
+}
+.navbar nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20%;
+  padding: 0px;
+  justify-content: space-around;
+}
+.navbar nav ul a {
+  text-decoration: none;
+}
+/* button login */
+.navbar .btn-login a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: red;
+  color: azure;
+  border-radius: 8px;
+}
+.navbar .btn-login a:hover {
+  background-color: rgb(63, 73, 221);
+}
+/* tiong-hua */
+.tiong-hoa {
+  margin: 30px 0px;
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+}
+.tiong-hoa .cta {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.tiong-hoa .cta h2 {
+  font-size: clamp(4rem, 4vw, 110px);
+  margin: 0px;
+
+}
+.tiong-hoa .cta p {
+  margin: 5px 0px 20px 0px;
+  width: 80%;
+  text-align: center;
+}
+.tiong-hoa .wrap-img {
+  display: flex;
+  justify-content: center;
+}
+.tiong-hoa .wrap-img img {
+  width: 80%;
+}
+.tiong-hoa .cta .btn-cta {
+  display: flex;
+  gap: 10px;
+  margin: 0px;
+  padding: 0px;
+}
+.tiong-hoa .cta .btn-cta a {
+  text-decoration: none;
+}
+.tiong-hoa .cta .btn-cta a:nth-child(1) {
+  padding: 13px 20px;
+  background-color: orangered;
+  color: azure;
+  border-radius: 8px;
+}
+
+.tiong-hoa .cta .btn-cta a:nth-child(2) {
+  padding: 13px 20px;
+  background-color: green;
+  color: azure;
+  border-radius: 8px;
+}
+/* products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2%;
+}
+.products .card {
+  margin: 10px 0px;
+  padding: 10px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+  box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+}
+.products .card > img {
+  width: 90%;
+  align-self: center;
+}
+.products .card > .btn-card {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  justify-content: space-between;
+  margin: 10px 0px 0px 0px;
+}
+.products .card .btn-card > a {
+  text-decoration: none;
+  background-color: green;
+  color: azure;
+  padding: 6px 15px;
+  border-radius: 4px;
+}
+
+.products .card .btn-card > h3 {
+  margin: 10px 0px;
+  font-size: 14px;
+}
+
+.products .card > p {
+  margin: 0px;
+  font-size: 14px;
+}
+.products .card > h3 {
+  margin: 5px 0px;
+  font-size: 16px;
+}
+/*Blogs */
+.blogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.blogs .card {
+  height: auto;
+  margin: 10px 0px;
+  /* padding: 10px; */
+  width: 45%;
+  flex-direction: column;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+  box-shadow: 0px 0px 2px 0px rgba(201, 201, 201, 1);
+}
+.blogs .card .description > a {
+  text-decoration: none;
+}
+.blogs .card > img {
+  width: 100%;
+  align-self: center;
+}
+.blogs .card .description {
+  padding: 0px 10px 10px 10px;
+}
+.blogs .card .description > h3 {
+  margin: 10px 0px 0px 0px;
+}
+.blogs .card .description > p {
+  margin: 10px 0px;
+  font-size: 14px;
+}
+/* footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0px;
+}
+footer .satu {
+  width: 100%;
+}
+footer .satu .sosial-media {
+  display: flex;
+  gap: 30px;
+}
+footer .satu .sosial-media a {
+  text-decoration: none;
+  color: black;
+}
+footer .dua {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+footer .dua > a {
+  text-decoration: none;
+  width: 50%;
+  display: flex;
+  color: black;
+  gap: 5;
+}
+
+footer .tiga {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+footer .tiga > a {
+  text-decoration: none;
+  color: black;
+}
+
+/* tampilan tablet/ipad */
+@media (min-width: 768px) {
+  .container {
+    padding: 0px 35px;
+  }
+  /* .blogs .card > a {
+    text-decoration: none;
+  } */
+  /* tiong-hoa */
+  .tiong-hoa {
+    display: flex;
+    margin-top: 40px;
+    justify-content: start;
+  }
+  .tiong-hoa .cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 50%;
+    order: 2;
+  }
+  .tiong-hoa .cta h2 {
+    font-size: clamp(35px, 5rem, 110px);
+    margin: 0px;
+    padding: 0px;
+  }
+  .tiong-hoa .cta p {
+    text-align: left;
+    width: 100%;
+  }
+  .tiong-hoa .wrap-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .tiong-hoa .cta span {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .tiong-hoa .wrap-img img {
+    width: 65%;
+  }
+
+  /* Products Ipad */
+  .products .card {
+    width: 20%;
+  }
+  /* blogs */
+  .blogs .card {
+    width: 23%;
+  }
+
+  /* Footer Ipad */
+  footer {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }  
+  footer .satu {
+    width: 50%;
+  }
+  footer .dua {
+    width: 25%;
+  }
+  footer .tiga {
+    width: 25%;
+  }
+}
+
+
+
+/* tampilan leptop / macbook  */
+@media (min-width: 1028) {
+}
+
+/*  tampilan dekstop  */
+@media (min-width: 1280) {
+}

@@ -1,0 +1,42 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrap {
+  margin: clamp(2rem, 20vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.side-left p,
+.side-center p,
+.side-right p {
+  margin: 0px;
+  border: 2px solid;
+}
+
+/* Tampilan untk tablet atau /ipad */
+
+@media (min-widht: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+/* Tampilan untuk Mackbook/ laptob */
+@media (min-widht: 1024px) {
+}
+/* Tampilan untuk deksop*/
+@media (min-widht: 1024px) {
+}

@@ -1,0 +1,74 @@
+Absolut unite {pixel} : satuan mutlak satuan yang selalu sama dalam konteks apapun.
+ jadi ukurannya akan tetap sama dalam ukuran layar berapapun.
+
+relative unit (em dan rem): satuan yang dapat berubah berdasarkan konteksnya.
+biasanya sering dipakaiuntuk font size atau ukuran font (ukuran gaya tulisan).
+
+viewport unite(vh dan vw): satuan yang berhubungan dengan unit area pandang.yaitu tinggi dan lebar suatu layar.
+macamnya ada 2: 1,viewport-height (vh) dan 2,viewport-width (vw)
+
+------------------------------------------------------------------------------------------------------------------
+syntax css
+p {
+    font-size: 16px:
+}
+
+p           :selector
+{...}       :declaration (semua konten di dalam kurung kurawal)
+font-size   : property
+16px        :property-value
+
+
+-----------------------------------------------------------------------------------------------------------
+selector
+1.simple selector :pilih element  berdasarkan nama elementnya seperti: p, div, h1, dsb, id(#), atau class (.)
+2.combinator :memilih nama element berdasarkan hubungan tertentu diantara elemen-elemen.
+3.pseudo-classes : memilih element berdasarkan pada keadaan tertentu
+4.pseudo-elemen :memilih dan memberi gaya pada bagian elemen
+
+----------------------------------------------------------------------------------------------------------------
+-------------------
+Combinator selector
+1.descendant selector (space)
+2.child selector (>)
+3.adjacent sibling selalu (+)
+4. general sibling selector (~)
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Pseudo-classes selector 
+:hover,:first-child, :last-child, :nth-child(), 
+:active, (lihat selengkapnya di google class room)
+--------------------------------------------------------
+pseudo-element selector
+(ada di html)
+
+-------------------------------------suatu element
+position property in css : yaitu menentukan jenis dalam metode pemosisian yang digunakan untuk s
+
+-------------------------------------------------------------------------------------------------/
+Layouting
+Box-Model:
+1.content
+2.padding
+3.border
+4.outline-offfset
+5.outline
+6.Margin
+7.Absolut +top&left (wrap-relative)
+--------------------------------------
+
+flexbox mencakup (kemampuan wadah dalam menampung suatu items agar dapat tertata secara rapi ) :
+ crsos-exis (vertikal :dari atas ke bawah) mencakup: main-size, main-exis, main-start & main-end.
+ main-exis (horizontal :dari kiri ke kanan) mencakup:cros-size,cros-start & cros-end, cros-axis.\
+ flexbox dipengaruhi oleh:
+                        1.padding
+                        2.width (axis)
+                        3.Margin
+                        4.height (croos)
+
+Flex-flow (aliran) ada 2 :flex-direction
+                          flex-wrap
+
+main-axis: justify-content.

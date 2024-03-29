@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Css:flex</title>
+    <style>
+      .justify-content-space-between {
+        background-color: gold;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 15px;
+      }
+      .justify-content-space-between > div {
+        background-color: white ;
+      }
+      .main-start {
+        padding: 20px 15px;
+        width: 50%;
+        height: 100px;
+        background-color: blue;
+        display: flex;
+        justify-content: space-between;
+      }
+      .main-start > div {
+        flex-wrap: wrap;
+        width: 50%;
+        height: 100px;
+        background-color: red;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="justify-content-space-between">
+      <div class="Logo">Logo</div>
+      <div class="wrap">
+        <div class="Home">Home</div>
+        <div class="About">About</div>
+      </div>
+      <div class="Login">Login</div>
+    </div>
+    <div class="main-start">
+      <div class="img">image Hero</div>
+      <div class="main-start">
+        <div class="h2">Hello</div>
+        <div class="p">chose your faforites destination</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css</title>
+    <style>
+      .absolut {
+        /* absolut (px) */
+        font-size: 15px;
+      }
+      .relative-rem {
+        /* 2em =2 * 15px */
+        font-size: 2rem;
+      }
+      .relative-em {
+        font-size: 20px;
+      }
+      .relative-em p:nth-child(1) {
+        font-size: 2em;
+      }
+      .relative-em p:nth-child(2) .viewport-height {
+        /* 1vh =1% dari tinggi area pandangan (laman)  */
+        font-size: 5vh;
+        color: red;
+      }
+
+      .viewport-width {
+        /* 1vw =1% dari lebar area pandangan tampilan (laman) */
+        font-size: 5vw;
+        color: blue;
+      }
+      .wrapping-descendant div {
+        background-color: blue;
+      }
+      .wrapping-child div > p {
+        /* semua element p di dalam div tapa ada pembungkus element yang lain */
+        background-color: chocolate;
+      }
+      .wrapping-adjacent-sibling div + p {
+        /* satu element p tepat setelah div  */
+        background-color: brown;
+      }
+      a[herf="#"] {
+        background-color: blueviolet;
+        color: white;
+        text-decoration: none;
+      }
+      .wrapping-general-sibling div ~ p {
+        /* menyeleksi semua element psetelah div secara langsung bukan sebuah bungkusan lagi */
+        background-color: red;
+      }
+      .wrapping-pseudo a:hover {
+        background-color: dimgray;
+      }
+      .wrapping-pseudo div p:nth-child(2) {
+        background-color: goldenrod;
+      }
+      .wrapping-pseudo div p:first-child {
+        background-color: aqua;
+      }
+      .wrapping-pseudo div p:last-child {
+        background-color: red;
+      }
+      .wrapping-pseudoelement p::first-letter {
+        color: red;
+        font-size: 30px;
+        /* margin: 0px; */
+      }
+      .wrapping-pseudoelement p::first-line {
+        background-color: gold;
+      }
+      .position-property {
+        border: 2px solid rebeccapurple;
+        position: relative;
+      }
+      .position-property p:nth-child(1) {
+        /* tidak terpengaruh property top, buttom, left,dan right,
+        dan bisa dipengaruhi oleh padding dan marigin */
+        position: static;
+        border: 1px solid green;
+      }
+      .position-property p:nth-child(2) {
+        /* di pengaruhi oleh top bisa dipengaruhi oleh padding dan marigin
+        left, right, bottom, dan mengikuti alur struktur.*/
+        position: relative;
+        border: 1px solid red;
+        left: 0px;
+        top: 20px;
+        bottom: 0px;
+        right: 0px;
+      }
+      .position-property p:nth-child(3) {
+        /* tergantung dari pembungkusnya dan berganti apabila relative,
+        dan juga dipengaruhi oleh : margin ,padding ,top,left,right,bottom.
+        tidak mengikuti alur struktur/layar */
+        position: absolute;
+        border: 1px solid blue;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px;
+      }
+      .position-property p:nth-child(4) {
+        /* terpengaruh dengan:top,bottom,left,margin,right,
+        mengikuti layar dilihat dari jarak pandang layarnya (dari pandangan layar fullnnya) */
+        /* position: fixed;
+        border: 3px solid brown; */
+        top: 10px;
+        margin: 0px;
+        left: 10px;
+        right: 10px;
+        bottom: 0px;
+      }
+      .position-property p:nth-child(5) {
+        /*akan bekerja jika jika posisinya tidak terbungkus ,dan merekat pada layar/bodynya  */
+        position: sticky;
+        border: 1px solid black;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px;
+      }
+      /* .sticky-satu {
+       
+        position: sticky;
+        text-align: right;
+        top: 0px;
+      } */
+      /* .sticky-dua {
+        position: sticky;
+        text-align: right;
+        top: 30px;
+      } */
+      :root {
+        --header: 3rem;
+        --footer: 40px;
+        --main: calc(100vw - calc(var(--header) - var(--footer)));
+        --judul: 20px;
+        --subjudul: 15px;
+      }
+      #header {
+        height: var(--header);
+        background-color: blue;
+        font-size: var(--judul);
+      }
+      #main {
+        height: var(--main);
+        background-color: green;
+        font-size: var(--subjudul);
+      }
+      #footer {
+        height: var(--footer);
+        background-color: orangered;
+        font-size: var(--subjudul);
+      }
+      /* main css-min */
+      .min-css {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid black;
+        resize: both;
+        overflow: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .min-css #icon-holder {
+        box-sizing: border-box;
+        height: min(150px, 100%);
+        width: min(150px, 100%);
+        border: 6px solid blue;
+      }
+      /* main css-max */
+      .max-css {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid black;
+        resize: both;
+        overflow: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .max-css #icon-holder {
+        box-sizing: border-box;
+        height: max(100px, 4rem, 50%);
+        width: max(100px, 4rem, 50%);
+        border: 6px solid red;
+      }
+      /* belajar clamp dan mengenal perbedaanya dengan vw,vh,
+      (clamp biasa dipakai untuk menentukan nilai idealnya:baik dari nilai minium dan maksimum ) */
+      .wrapping-clamp h2 {
+        font-size: clamp(14px, 2rem, 80vw);
+      }
+      .wrapping-clamp p:nth-child(2) {
+        font-size: 5vw;
+      }
+      .wrapping-clamp p:nth-child(3) {
+        font-size: clamp(1em, 5vw, 3rem);
+      }
+      /* wrapping overflow */
+      .wrapping-overflow {
+        border: 2px solid gold;
+        height: 80px;
+        width: 80px;
+        /* overflow: visible;
+        overflow: hidden; */
+        overflow: scroll;
+        /* overflow: clip;
+        overflow-clip-margin: 30px;
+        overflow: auto; */
+      }
+    </style>
+  </head>
+  <body>
+    <h3></h3>
+    <hr />
+    <h3>overlow CSS</h3>
+    <div class="wrapping-overflow">
+      <!-- visible-headen-clip- scrol-auto -->
+      <p>
+        hari jum'at adalah hari raya umat muslim yang mulia,dihari jum'at kita
+        di perintahkan untuk banyak bersolawat pada nabi kita muhammad dan
+        berbuat banyak kebajikan didalamnya
+      </p>
+    </div>
+    <hr />
+    <!-- contoh kegunaan clamp dan contoh penggunaanya serta perbedaannya dengan: vw, vh,  -->
+    <h3>clamp()</h3>
+    <div class="wrapping-clamp">
+      <h2>ini adalah judul clamp</h2>
+      <p>paragraf no-calmp</p>
+      <p>paragraf clamp</p>
+    </div>
+    <hr />
+    <!-- pembelajarn max & min css -->
+    <h3>min() & max() CSS</h3>
+    <div class="min-css">
+      <img
+        src="https://avatars.githubusercontent.com/u/4441966?s=200&v=4"
+        alt="icon"
+        id="icon-holder"
+      />
+    </div>
+    <br />
+    <div class="max-css">
+      <img
+        src="https://avatars.githubusercontent.com/u/4441966?s=200&v=4"
+        alt="icon"
+        id="icon-holder"
+      />
+    </div>
+
+    <hr />
+    <h3>CSS Function calc()</h3>
+    <div class="function-calc">
+      <haeder id="header">header</haeder>
+      <main id="main">main</main>
+      <footer id="footer">footer</footer>
+    </div>
+    <hr />
+    <!--position-property in css  -->
+    <h3>position-property in css</h3>
+    <div class="position-property">
+      <p>paragraf static</p>
+      <p>paragraf relative</p>
+      <p>paragraf absolute</p>
+      <p>paragraf fixed</p>
+      <p>paragraf sticky</p>
+    </div>
+    <p class="sticky-satu">paragraf sticky 1</p>
+    <p class="sticky-dua">paragraf sticky 2</p>
+    <hr />
+    <!-- pseudo-element selector -->
+    <h3>pseudo-element selector</h3>
+    <div class="wrapping-pseudoelement">
+      <p>
+        Abdullah anaknya ustad abdurrahman <br />orangnya cepu dan menggatelkan
+        sekali seperti bapaknya yang sangat gatel <br />
+        selalu memarahi santri tanpa ada alasan yang ceto dan masuk akal
+      </p>
+    </div>
+
+    <hr />
+    <h3>pseudo-classes selector</h3>
+    <div class="wrapping-pseudo">
+      <a href="">paragraf 1</a>
+      <div>
+        <p>pertama</p>
+        <p>kedua</p>
+        <p>ketiga</p>
+        <p>keempat</p>
+      </div>
+    </div>
+    <hr />
+    <!--general sibling selector -->
+    <hr />
+    <h3>general sibling selector</h3>
+    <div class="wrapping-general-sibling">
+      <div>
+        <p>paragraf 1</p>
+        <p>paragraf 2</p>
+      </div>
+      <p>paragraf 3</p>
+      <p>paragraf 6</p>
+      <main><p>paragraf 4</p></main>
+      <p>paragraf 5</p>
+    </div>
+
+    <hr />
+    <!--adjacent sibling selector -->
+    <h3>[atribut="value"] selector</h3>
+    <hr />
+    <h3>adjacent sibling selector</h3>
+    <p>
+      pertama <a href="#">kedua</a>ketiga
+      <a href="button">keempat</a>
+    </p>
+    <div class="wrapping-adjacent-sibling">
+      <div>
+        <p>paragraf 1</p>
+      </div>
+      <p>paragraf 2</p>
+      <div>
+        <p>paragraf 3</p>
+      </div>
+      <p>paragraf 4</p>
+    </div>
+    <hr />
+    <h3></h3>
+    <!-- wrapping-child -->
+    <div class="wrapping-child">
+      <div>
+        <p>paragraf 1</p>
+        <main>
+          <p>paragraf 2</p>
+        </main>
+        <p>paragraf 3</p>
+      </div>
+
+      <p>paragraf 4</p>
+      <p>paragraf 5</p>
+    </div>
+
+    <hr />
+    <!-- Descandent selector (space) -->
+    <h3>Descendant selector</h3>
+
+    <div class="wrapping-descendant">
+      <div>
+        <p>paragraf 1</p>
+        <p>paragraf 2</p>
+        <p>paragraf 3</p>
+      </div>
+      <p>paragraf 4</p>
+      <p>paragraf 5</p>
+    </div>
+    <hr />
+    <!-- Absolut unit | Relative unit | Viewport unit -->
+
+    <!-- absolut unit -->
+
+    <p class="absolut">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A delectus nemo
+      ut ipsum minus doloremque, beatae quasi rem?
+    </p>
+
+    <!-- Relative -->
+    <h3>Relative unit</h3>
+    <p class="relative-rem">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A delectus nemo
+      ut ipsum minus doloremque, beatae quasi rem?
+    </p>
+    <!-- relative class rem dan em -->
+    <h2>contoh penggunaan rem dan em</h2>
+    <div class="relative-rem">
+      <p>gaza gendut,ijat hitam,mei-mei rasis,</p>
+    </div>
+    <div class="relative-em">
+      <p>paragraf relative em 1</p>
+      <p>paragraf relative em 2</p>
+    </div>
+
+    <!-- viewport -->
+
+    <p class="viewport-height">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A delectus nemo
+      ut ipsum minus doloremque, beatae quasi rem?
+    </p>
+
+    <p class="viewport-width">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A delectus nemo
+      ut ipsum minus doloremque, beatae quasi rem?
+    </p>
+    <hr />
+  </body>
+</html>

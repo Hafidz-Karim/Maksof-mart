@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox CSS</title>
+    <style>
+      .flexbox {
+        /* flex flow */
+        background-color: blue;
+        display: flex;
+        /* 1 */
+        flex-direction: row;
+        /* 2 */
+        flex-wrap: row wrap;
+      }
+      .flexbox > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-center {
+        /* flex-flow (justify-content) */
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        }
+      .justify-content-center > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-start {
+        /*  */
+        background-color: red;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .justify-content-start > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-end {
+        /* flex-flow (justify-content) */
+        background-color: red;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .justify-content-end > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-space-around {
+        /* flex-flow (justify-content) */
+        background-color: darkgray;
+        display: flex;
+        justify-content: space-around;
+      }
+      .justify-content-space-around > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-space-evenly{
+        /* flex-flow (justify-content) */
+        background-color: aqua;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .justify-content-space-evenly > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .justify-content-space-between {
+      
+        background-color: gold;
+        display: flex;
+        justify-content: space-between;
+      }
+      .justify-content-space-between > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .align-items-center {
+        /* flex-flow (justify-content) */
+        background-color: green;
+        display: flex;
+       align-items: center;
+        height: 200px;
+      }
+      .align-items-center > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .align-items-start {
+        /* flex-flow (justify-content) */
+        background-color: grey;
+        display: flex;
+        align-items: flex-start;
+        height: 200px;
+      }
+      .align-items-start > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .align-items-end {
+        /* flex-flow (justify-content) */
+        background-color: blue;
+        display: flex;
+        align-items: flex-end;
+        height: 200px;
+        justify-content: end;
+        /* align-items: stretch; */
+      }
+      .align-items-end > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+      }
+      .align-items-stretch {
+        background-color: black;
+        display: flex;
+        height: 200px;
+        justify-content: flex-end;
+        align-items: stretch;
+      }
+      .align-items-stretch > div {
+        width: 10%;
+        padding: 20px;
+        margin: 10px;
+        background-color: red;
+      }
+      .align-items-baseline {
+        display: flex;
+        background-color: aqua;
+        align-items: baseline;
+        height: 300px;
+        
+      }
+      .align-items-baseline .satu {
+        font-size: 30px;
+      }
+      .align-items-baseline .dua {
+        font-size: 50px;
+      }
+      .align-items-baseline .tiga { 
+        font-size: 70px;
+      }
+      .align-content {
+        display: flex;
+        background-color: green;
+        height: 400px;
+        /* align-content: start; */
+        /* align-content: baseline; */
+        /* align-content: flex-end; */
+        /* align-content: center; */
+        /* align-content: stretch; */
+        flex-wrap: wrap;
+        /* align-content: space-between; (yang mentog bagian sudut atas dengan sudut bawahnya dan jarak antara sudut bawah dan sudut atas sama)  */
+        /* align-content: space-around; (yang sama jarak antara tengah dan bagian atas dan bawah) */
+        /* align-content: space-evenly; (yang sama jarak antara satu dan lainya [bagian tengahnya] ) */
+      }
+      .align-content > div {
+        padding: 20px;
+        margin: 10px;
+        background-color: white;
+        width: 20%;
+        height:50px;
+      }
+      .align-self {
+                  display: flex;
+                  background-color: gold;
+                  height: 400px;
+                 
+      }
+      .align-self > div {
+        padding: 20px;
+        margin: 20px;
+        background-color: aliceblue;
+        height: 30px;
+        width: 20%;
+      }
+      .align-self .tiga {
+        align-self: center;
+        order: 10;
+       }
+      .align-self .dua {
+        align-self: end;
+        order: 3;
+       }
+      .align-self .satu {
+        align-self: center;
+        order: -4;
+       }
+      .align-self .empat {
+        align-self: center;
+        order: 3;
+       }
+       .Flex-Grow {
+        display: flex;
+        background-color: brown;
+       }
+       .Flex-Grow > div {
+        margin: 10px;
+        padding: 20px;
+        background-color: azure;
+       }
+       .Flex-Grow .dua{
+      flex-grow: 4;
+       }
+       .Flex-Grow .empat{
+      flex-grow: 3;
+       }
+       .Flex-Grow .satu{
+      flex-grow: 2;
+       }
+       .Flex-Grow .tiga{
+      flex-grow: 10;
+       }
+       .Flex-shrink {
+        display: flex;
+        background-color: orangered;
+        width: 10px0px;
+       }
+       .Flex-shrink  div {
+        width: 100%;
+        margin: 10px;
+        padding: 20px;
+        background-color: azure;
+        flex-grow: 1;
+        /* flex-basis: 100px; */
+        /* flex-shrink: 1; */
+       }
+      .Flex-shrink .dua {
+        flex-shrink: 5;
+      }
+      .Flex-shrink .tiga {
+        flex-shrink: 5;
+      }
+      .Flex-basis {
+        display: flex;
+        background-color: orangered;
+        width: 10px 0px;
+       }
+       .Flex-basis > div {
+        margin: 10px;
+        padding: 20px;
+        background-color: aliceblue;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis:50px ;
+       }
+        .Flex-basis .tiga {
+        flex-basis: 100px;
+       }
+   </style
+  </head>
+  <body>
+
+    <h3>Flex-basis ()- Main-Axis (horizontal - kiri ke kanan)</h3>
+    <div class="Flex-basis">
+      <div class="satu">Basis-joko-1</div>
+      <div class="dua">basis-tutik-2</div>
+      <div class="tiga">basis-ujian-3</div>
+      <div class="empat">basis-bagus-4</div>
+    </div>
+    <hr>
+    <h3>Flex-shrink (menyusut) - Main-Axis (horizontal - kiri ke kanan)</h3>
+    <div class="Flex-shrink">
+      <div class="satu">Flex-shrink-joko-1-50px</div>
+      <div class="dua">Flex-shrink-tutik-2-50px</div>
+      <div class="tiga">Flex-shrink-ujian-3</div>
+      <div class="empat">Flex-shrink-bagus-4-50px</div>
+    </div>
+    <hr>
+    <h3>Flex-Grow - Main-Axis (horizontal - kiri ke kanan)</h3>
+    <div class="Flex-Grow">
+      <div class="satu">Flex-Grow-joko-1</div>
+      <div class="dua">Flex-Grow-tutik-2</div>
+      <div class="tiga">Flex-Grow-ujian-3</div>
+      <div class="empat">Flex-Grow-bagus-4</div>
+    </div>
+    <hr>
+    <h3>Align-Self - Croos-Axis (Vertikal :Atas ke Bawah)</h3>
+    <div class="align-self">
+      <div class="satu">align-self-satu-joko</div>
+      <div class="dua">align-self-dua-tutik</div>
+      <div class="tiga">align-self-tiga-mardiani</div>
+      <div class="empat">align-self-empat-bagas</div>
+    </div>
+    <hr>
+    <h3>Align-Content - Croos-Axis (Vertikal :Atas ke Bawah)</h3>
+    <div class="align-content">
+      <div class="satu">align-content</div>
+      <div class="dua">align-content</div>
+      <div class="tiga">align-content</div>
+      <div class="empat">align-content</div>
+      <div class="lima">align-content</div>
+      <div class="enam">align-content</div>
+      <div class="tujuh">align-content</div>
+      <div class="delapan">align-content</div>
+      <div class="sembilan">align-content</div>
+    </div>
+    <p><hr></p>
+    <h3>Croos axis (vertical)</h3>
+    <hr>
+     <div class="align-items-baseline">
+      <div class="satu">baseline</div>
+      <div class="dua">baseline</div>
+      <div class="tiga">baseline</div>
+  </div>
+   <hr>
+    <div class="align-items-stretch">
+        <div class="satu">align-items-stretch 1</div>
+        <div class="dua">align-items-stretch 2</div>
+        <div class="tiga">align-items-stretch 3</div>
+    </div>
+    <p><hr></p>
+    <div class="align-items-end">
+        <div class="satu">align-items-end 1</div>
+        <div class="dua">align-items-end  2</div>
+        <div class="tiga">align-items-end 3</div>
+    </div>
+    <hr>
+    <div class="align-items-start">
+        <div class="satu">align-items-start 1</div>
+        <div class="dua">align-items-start  2</div>
+        <div class="tiga">align-items-start  3</div>
+    </div>
+   <p><hr></p> 
+    <div class="align-items-center">
+        <div class="satu">align-items-center 1</div>
+        <div class="dua">align-items-center 2</div>
+        <div class="tiga">align-items-center 3</div>
+    </div>
+   <p><hr></p> 
+    <h3>Main Axis (horizontal)</h3>
+    <div class="justify-content-space-between">
+        <div class="satu">space-between 1</div>
+        <div class="dua">space-between 2</div>
+        <div class="tiga">space-between 3</div>
+    </div>
+    <hr>
+    <div class="justify-content-space-evenly">
+        <div class="satu">space-evenly 1</div>
+        <div class="dua">space-evenly 2</div>
+        <div class="tiga">space-evenly 3</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-space-around">
+        <div class="satu">space-around 1</div>
+        <div class="dua">space-around 2</div>
+        <div class="tiga">space-around 3</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-end">
+        <div class="satu">main-end 1</div>
+        <div class="dua">main-end 2</div>
+        <div class="tiga">main-end 3</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-start">
+        <div class="satu">main-start 1</div>
+        <div class="dua">main-start 2</div>
+        <div class="tiga">main-start 3</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-center">
+        <div class="satu">center 1</div>
+        <div class="dua">center 2</div>
+        <div class="tiga">center 3</div>
+    </div>
+    <p><hr></p>
+    <div class="flexbox">
+      <div class="satu">satu</div>
+      <div class="dua">dua</div>
+      <div class="tiga">tiga</div>
+      <div class="empat">empat</div>
+      <div class="lima">lima</div>
+      <div class="enam">enam</div>
+      <div class="tujuh">tujuh</div>
+      <div class="delapan">delapan</div>
+    </div>
+  </body>
+</html>
